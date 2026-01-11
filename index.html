@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Pro Binder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="brand">
+            <h1>MTG Binder</h1>
+            <span id="page-indicator" class="pill">Cargando...</span>
+        </div>
+        <button id="add-card-btn" class="action-btn">+ Añadir Carta</button>
+    </div>
+
+    <div class="main-stage">
+        <button id="prev-btn" class="nav-arrow" disabled>&#10094;</button>
+
+        <div class="book-scene">
+            <div class="binder-book" id="the-book">
+                <div class="binder-page page-left" id="page-left">
+                    <div class="page-content" id="content-left"></div>
+                </div>
+                
+                <div class="binder-spine"></div>
+
+                <div class="binder-page page-right" id="page-right">
+                    <div class="page-content" id="content-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="next-btn" class="nav-arrow" disabled>&#10095;</button>
+    </div>
+
+    <div id="card-modal" class="modal-overlay hidden">
+        <div class="modal-content details-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-wrapper">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Nombre</h2>
+                    <p id="modal-type" class="modal-subtitle">Tipo</p>
+                    <div class="oracle-text-box">
+                        <p id="modal-oracle">Texto...</p>
+                    </div>
+                    <h3>Otras versiones</h3>
+                    <div class="reprints-grid" id="reprints-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="search-modal" class="modal-overlay hidden">
+        <div class="modal-content search-box-layout">
+            <span class="close-search">&times;</span>
+            <h2>Añadir Carta</h2>
+            
+            <div class="search-bar-row">
+                <input type="text" id="search-input" placeholder="Ej: Black Lotus..." autocomplete="off">
+                <button id="do-search-btn">Buscar</button>
+            </div>
+
+            <div id="search-results" class="results-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
